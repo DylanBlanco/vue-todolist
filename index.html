@@ -7,13 +7,26 @@
     <!--link css-->
     <link rel="stylesheet" href="css/style.css">
     
-    <title></title>
+    <title>Vue To Do List</title>
 </head>
 <body>
     <div id="app">
-        <h1>
-            {{message}}
-        </h1>
+        <header>
+            <h1>
+                To Do List del Booleaner di classe #130
+            </h1>
+            <h2>Ci sono {{ todosList.length }} task da svolgere ogni giorno</h2>
+
+            <div>
+                <ul>
+                    <li v-for="(todoList, index) in todosList">
+                        {{ todoList }}
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main></main>
+        <footer></footer>
     </div>
 
     <!--link VUE js-->
