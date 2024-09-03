@@ -16,17 +16,30 @@
                 To Do List del Booleaner di classe #130
             </h1>
             <h2>Ci sono {{ todosList.length }} task da svolgere ogni giorno</h2>
+        </header>
 
+        <main>
             <div>
+                <h4>
+                    Aggiungere il to-do: {{newTodo}}
+                </h4>
+    
+                <form @submit.prevent="addTodo()">
+                    <input v-model="newTodo" type="text">
+                    <button type="submit">Aggiungi</button>
+                </form>
+
                 <ul>
-                    <li v-for="(todoList, index) in todosList">
-                        {{ todoList }}
+                    <li v-for="(todoList, index) in todosList"
+                    :class="{
+                        'done': todoList.done == true
+                    }">
+                        {{ todoList.text }}
+                        <button @click="removeTodo">Remove</button>
                     </li>
                 </ul>
             </div>
-        </header>
-        <main></main>
-        <footer></footer>
+        </main>
     </div>
 
     <!--link VUE js-->
